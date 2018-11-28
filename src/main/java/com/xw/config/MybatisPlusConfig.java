@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //Spring boot方式
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.xw.mapper.*")
 public class MybatisPlusConfig {
     /**
      * 分页插件
