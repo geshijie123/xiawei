@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xw.entity.test.User;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+import java.util.Map;
 
 public interface UserMapper extends BaseMapper<User> {
 
@@ -16,8 +20,11 @@ public interface UserMapper extends BaseMapper<User> {
      * </p>
      *
      * @param page 分页对象,xml中可以从里面进行取值,传递参数 Page 即自动分页,必须放在第一位(你可以继承Page实现自己的分页对象)
-     * @param state 状态
+     * @param email 状态
      * @return 分页对象
      */
-    IPage<User> selectPageVo(Page page, @Param("state") Integer state);
+    IPage<User> selectByPage(Page page, @Param("email") String email);
+
+
+    List<Map<String, Object>> mapperSelectBySql(@Param("email") String email);
 }
