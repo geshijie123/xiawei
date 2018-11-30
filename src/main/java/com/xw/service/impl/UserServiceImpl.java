@@ -5,12 +5,15 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xw.entity.test.User;
 import com.xw.mapper.UserMapper;
 import com.xw.service.UserService;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
 @Service
+@Cacheable(value = "User")
 public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
 
 
@@ -20,6 +23,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     }
 
     @Override
+    @CacheEvict(value = "User", allEntries=true)
     public int delete(String id) {
         return baseMapper.deleteById(id);
     }
@@ -35,6 +39,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     }
 
     @Override
+    @Cacheable(keyGenerator = "myKeyGenerator", unless = "#result eq null")
     public List<Map<String, Object>> mapperSelectBySql() {
         return baseMapper.mapperSelectBySql("1");
     }

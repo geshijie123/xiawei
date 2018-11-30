@@ -7,6 +7,7 @@ import com.xw.entity.test.User;
 import com.xw.service.UserService;
 import com.xw.utils.ErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -106,7 +107,6 @@ public class UserController extends ApiController {
         List<Map<String, Object>> maps = userService.mapperSelectBySql();
         return success(maps);
     }
-
 
 
 
