@@ -5,12 +5,22 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * 运营商联系电话枚举
+ * @author geshijie
  */
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum PhoneEnum implements IEnum<String> {
-    CMCC("10086", "中国移动"),
+    /**
+     * CUCC 中国联通
+     */
     CUCC("10010", "中国联通"),
-    CT("10000", "中国电信");
+    /**
+     * CT 中国电信
+     */
+    CT("10000", "中国电信"),
+    /**
+     * CMCC 中国移动
+     */
+    CMCC("10086", "中国移动");
 
     private String value;
     private String desc;
