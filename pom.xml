@@ -49,17 +49,17 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.0.6</version>
         </dependency>
-        <dependency>
+      <!--  <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
 
         <!--阿里巴巴druid数据库管理-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.1.10</version>
+            <version>1.1.12</version>
         </dependency>
 
         <!--mysql-->
@@ -76,6 +76,10 @@
             <version>1.2.47</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <!-- freemarker 模板引擎 -->
         <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
@@ -103,7 +107,13 @@
             <version>3.1.0</version>
         </dependency>
 
-
+        <!--工具包  时间 加减乘除 加密机密 等等等等-->
+        <!--文档 http://hutool.mydoc.io -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.3.1</version>
+        </dependency>
 
 
     </dependencies>

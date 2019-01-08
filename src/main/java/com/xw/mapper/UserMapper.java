@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xw.entity.test.User;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -23,8 +23,8 @@ public interface UserMapper extends BaseMapper<User> {
      * @param email 状态
      * @return 分页对象
      */
-    IPage<User> selectByPage(Page page, @Param("email") String email);
+    IPage<Map> selectByPage(Page page, @Param("email") String email);
 
 
-    List<Map<String, Object>> mapperSelectBySql(@Param("email") String email);
+    List<Map> mapperSelectBySql(@Param("email") String email);
 }

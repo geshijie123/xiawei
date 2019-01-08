@@ -27,4 +27,15 @@ public class TestController extends ApiController {
 
         return success(1);
     }
+
+    @RequestMapping("/demo")
+    public R demo(String aaa){
+
+
+//        return success(232323);
+//        return failed("233");
+        Assert.isTrue(false,ErrorCode.DOT_LOGIN);
+        return failed("233");
+    }
+
 }

@@ -5,8 +5,8 @@ import com.baomidou.mybatisplus.extension.api.IErrorCode;
 public enum ErrorCode implements IErrorCode {
 
     TEST(1000, "测试错误编码"),
-
-    DATA_ERROR(2L,"参数错误");
+    DATA_ERROR(2L,"参数错误"),
+    DOT_LOGIN(-3,"未登录");
 
     private long code;
     private String msg;
